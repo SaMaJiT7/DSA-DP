@@ -25,12 +25,12 @@ public class BackIntro {
         }
     }
         public static ArrayList<String> Allpath1(String p , int r , int c) {
+            ArrayList<String> list = new ArrayList<>();
             if (r == 1 && c == 1) {
-                ArrayList<String> list = new ArrayList<>();
                 list.add(p);
                 return list;
             }
-            ArrayList<String> list = new ArrayList<>();
+
             if (r > 1) {
                 list.addAll(Allpath1(p + "D", r - 1, c));
             }
