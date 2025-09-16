@@ -1,3 +1,5 @@
+import LinkedList.ListNode;
+
 public class reorder {
     public void reorderList(ListNode head) {
 

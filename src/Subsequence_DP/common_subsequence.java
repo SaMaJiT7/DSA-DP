@@ -31,7 +31,9 @@ class common_subsequence {
 public int longestCommonSubsequence(String text1, String text2) {
     int m = text1.length();
     int n = text2.length();
-
+    if(text1.equals(text2)){
+        return 0;
+    }
     int[][] t = new int[m+1][n+1];
 
     for (int i = 0; i <= m ; i++){

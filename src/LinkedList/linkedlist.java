@@ -1,3 +1,5 @@
+package LinkedList;
+
 public class linkedlist {
     public boolean isPalindrome(ListNode head) {
         ListNode slow = head;
