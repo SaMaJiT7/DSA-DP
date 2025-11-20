@@ -3,6 +3,7 @@ package GRID_DP;
 import java.util.Arrays;
 
 public class maximal_area {
+    static int[][] t = new int[1001][1001];
     public int maximalSquare(char[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;

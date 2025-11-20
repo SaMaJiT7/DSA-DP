@@ -19,7 +19,5 @@ public class subsets {
         }
     }
 
-    public List<List<Integer>> subsetsWithDup(int[] nums) {
 
-    }
 }
