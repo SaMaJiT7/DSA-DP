@@ -1,0 +1,19 @@
+package Hashmap;
+
+public class smallest_by_K {
+    public int smallestRepunitDivByK(int k) {
+        if(k == 1){
+            return 1;
+        }
+        int num = 0;
+        for(int len = 1; len <= k; len++){
+            num = ((num * 10) + 1) % k ;
+
+            if(num == 0){
+                return len;
+            }
+
+        }
+        return -1;
+    }
+}
