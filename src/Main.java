@@ -94,6 +94,8 @@ public class Main {
         String nextLine() throws IOException { return br.readLine(); }
     }
 
+
+
 //    public static void main(String[] args) {
 //        Scanner sc = new Scanner(System.in);
 //        int N = sc.nextInt();
@@ -126,30 +128,100 @@ public class Main {
 //    }
 
 
+//    public static void main(String[] args) throws IOException {
+//        FastScanner Sc = new FastScanner(System.in);
+//
+////        int n = Sc.nextInt();
+////        int ans = 0;
+////        for(int i = 2; i <= n; i++){
+////            int cnt = 0;
+////            int num = i;
+////            for(int j = 2; j*j <= num; j++){
+////                if(num % j == 0){
+////                    cnt++;
+////                    while(num % j == 0){
+////                        num /= j;
+////                    }
+////                }
+////            }
+////            if(num > 1){
+////                cnt++;
+////            }
+////            if(cnt == 2){
+////                ans++;
+////            }
+////        }
+////        System.out.println(ans);
+//        int t = Sc.nextInt();
+//
+//        while(t-- > 0){
+//            int n = Sc.nextInt();
+//            int m = Sc.nextInt();
+//
+//            char[][] grid = new char[n][m];
+//            for(int i = 0; i < n; i++){
+//                String s = Sc.nextLine();
+//                for(int j = 0; j < m; j++){
+//                    grid[i][j] = s.charAt(j);
+//                }
+//            }
+//
+//            if(grid[0][0] == grid[n-1][m-1] || grid[n-1][0] == grid[0][m-1]){
+//                System.out.println("YES");
+//            }
+//            else{
+//                String ans = "YES";
+//                boolean impossible = true;
+//
+//                for(int j = 0; j < m-1; j++){
+//                    if(grid[0][j] != grid[0][j+1] || grid[n-1][j] != grid[n-1][j+1]){
+//                        impossible = false;
+//                    }
+//                }
+//
+//                if(impossible){
+//                    ans = "NO";
+//                }
+//
+//                impossible = true;
+//                for(int i = 0; i < n-1; i++){
+//                    if(grid[i][0] != grid[i+1][0] || grid[i][m-1] != grid[i+1][m-1]){
+//                        impossible = false;
+//                    }
+//                }
+//                if(impossible){
+//                    ans = "NO";
+//                }
+//                System.out.println(ans);
+//            }
+//        }
+//    }
     public static void main(String[] args) throws IOException {
-        FastScanner Sc = new FastScanner(System.in);
-
-        int n = Sc.nextInt();
-        int ans = 0;
-        for(int i = 2; i <= n; i++){
-            int cnt = 0;
-            int num = i;
-            for(int j = 2; j*j <= num; j++){
-                if(num % j == 0){
-                    cnt++;
-                    while(num % j == 0){
-                        num /= j;
-                    }
-                }
-            }
-            if(num > 1){
-                cnt++;
-            }
-            if(cnt == 2){
-                ans++;
-            }
+        FastScanner sc = new FastScanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i = 0; i < n; i++){
+            arr[i] = sc.nextInt();
         }
-        System.out.println(ans);
-    }
+        Arrays.sort(arr);
 
+        if(arr[0] != 1){
+            System.out.println(1);
+        }
+        else{
+            long minsum = 0;
+            long maxsum = 1;
+
+            for(int i = 1; i < n; i++){
+               long newminsum = arr[i] + minsum;
+               long newmaxsum = arr[i] + maxsum;
+
+               if(newminsum - maxsum > 1){
+                   break;
+               }
+               maxsum = Math.max(maxsum,newmaxsum);
+            }
+            System.out.println(maxsum+1);
+        }
+    }
 }
