@@ -2,30 +2,24 @@ package LC_QUestion;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
-public class minimum_abs_difference {
+public class min_abs_diff {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
         Arrays.sort(arr);
         int n = arr.length;
-        List<List<Integer>> result = new ArrayList<>();
         int mindiff = Integer.MAX_VALUE;
+        List<List<Integer>> ans = new ArrayList<>();
         for(int i = 0; i < n-1; i++){
-            int a = arr[i];
-            int b = arr[i+1];
-            int currentdiff = Math.abs(a-b);
+            int currentdiff = Math.abs(arr[i]-arr[i+1]);
             if(currentdiff < mindiff){
                 mindiff = currentdiff;
-                result.clear();
-                result.add(Arrays.asList(a,b));
+                ans.clear();
             }
-            else if(currentdiff == mindiff){
-                result.add(Arrays.asList(a,b));
+            if(currentdiff == mindiff){
+                ans.add(Arrays.asList(arr[i],arr[i+1]));
             }
         }
-        return result;
+        return ans;
     }
-
-
 }
