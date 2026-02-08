@@ -74,7 +74,7 @@ public class minimum_cost_path {
         int[] result = new int[n];
         Arrays.fill(result,Integer.MAX_VALUE);
         result[0] = 0;
-        pq.add(new int[]{ 0, 0});
+        pq.add(new int[]{0, 0});
 
 
         while(!pq.isEmpty()){
@@ -104,5 +104,4 @@ public class minimum_cost_path {
         }
         return -1;
     }
-
 }
