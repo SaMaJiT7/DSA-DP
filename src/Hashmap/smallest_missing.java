@@ -1,5 +1,7 @@
 package Hashmap;
 
+import charcount.Entry;
+
 import java.util.HashMap;
 
 public class smallest_missing {
@@ -9,6 +11,7 @@ public class smallest_missing {
             int rem = (num % value + value) % value;
             count.put(rem,count.getOrDefault(rem,0)+1);
         }
+
 
         int MEX = 0;
         while(true){

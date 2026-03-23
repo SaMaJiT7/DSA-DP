@@ -196,32 +196,61 @@ public class Main {
 //            }
 //        }
 //    }
+//    public static void main(String[] args) throws IOException {
+//        FastScanner sc = new FastScanner(System.in);
+//        int n = sc.nextInt();
+//        int[] arr = new int[n];
+//        for(int i = 0; i < n; i++){
+//            arr[i] = sc.nextInt();
+//        }
+//        Arrays.sort(arr);
+//
+//        if(arr[0] != 1){
+//            System.out.println(1);
+//        }
+//        else{
+//            long minsum = 0;
+//            long maxsum = 1;
+//
+//            for(int i = 1; i < n; i++){
+//               long newminsum = arr[i] + minsum;
+//               long newmaxsum = arr[i] + maxsum;
+//
+//               if(newminsum - maxsum > 1){
+//                   break;
+//               }
+//               maxsum = Math.max(maxsum,newmaxsum);
+//            }
+//            System.out.println(maxsum+1);
+//        }
+//    }
+
     public static void main(String[] args) throws IOException {
-        FastScanner sc = new FastScanner(System.in);
-        int n = sc.nextInt();
-        int[] arr = new int[n];
+        FastScanner fs = new FastScanner(System.in);
+        long n = fs.nextLong();
+        long k = fs.nextLong();
+        int q = fs.nextInt();
+        long[] range = new long[200001];
+        Arrays.fill(range,0);
         for(int i = 0; i < n; i++){
-            arr[i] = sc.nextInt();
+            int l = fs.nextInt();
+            int r = fs.nextInt();
+            range[l]++;
+            if(r+1 < 200001) range[r+1]--;
         }
-        Arrays.sort(arr);
+        for(int i = 1; i < 200001; i++) range[i] += range[i-1];
 
-        if(arr[0] != 1){
-            System.out.println(1);
+        for(int i = 1; i < 200001; i++){
+            if(range[i] >= k) range[i] = 1;
+            else range[i] = 0;
         }
-        else{
-            long minsum = 0;
-            long maxsum = 1;
-
-            for(int i = 1; i < n; i++){
-               long newminsum = arr[i] + minsum;
-               long newmaxsum = arr[i] + maxsum;
-
-               if(newminsum - maxsum > 1){
-                   break;
-               }
-               maxsum = Math.max(maxsum,newmaxsum);
-            }
-            System.out.println(maxsum+1);
+        for(int i = 1; i < 200001; i++){
+            range[i] += range[i-1];
+        }
+        for(int i = 0; i < q; i++){
+            int a = fs.nextInt();
+            int b = fs.nextInt();
+            System.out.println(range[b] - range[a-1]);
         }
     }
 }
