@@ -16,14 +16,14 @@ public class sum_3 {
             int k = nums.length-1;
 
             while(j < k){
-                if(nums[i] == nums[j]+nums[k]){
+                int sum = nums[i]+nums[j]+nums[k];
+                if(sum == 0){
                     result.add(Arrays.asList(nums[i], nums[j], nums[k]));
                     j++;
-
                     while (nums[j] == nums[j - 1] && j < k) {
                         j++;
                     }
-                } else if (nums[i] < nums[j]+nums[k]) {
+                } else if (sum < 0) {
                     j++;
                 }
                 else{
