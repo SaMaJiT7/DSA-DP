@@ -22,7 +22,7 @@ public class no_of_encalves {
             if(grid[n-1][j] == 1) bfs(grid,n-1,j);
         }
 
-        // First Column
+
         // First Column
         for(int i = 0; i < n; i++){
             if(grid[i][0] == 1) bfs(grid,i,0);
