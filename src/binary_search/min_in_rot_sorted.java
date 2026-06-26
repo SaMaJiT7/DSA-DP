@@ -1,6 +1,6 @@
 package binary_search;
 
-public class min_in_rot_sorted {
+public class    min_in_rot_sorted {
     public int findMin(int[] nums) {
         int n = nums.length;
         int low = 0;
