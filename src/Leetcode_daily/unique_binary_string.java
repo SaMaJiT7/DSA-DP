@@ -1,6 +1,6 @@
 package Leetcode_daily;
 
-import jdk.incubator.vector.VectorOperators;
+
 
 import java.util.Arrays;
 

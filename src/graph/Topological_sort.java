@@ -9,7 +9,7 @@ public class Topological_sort {
     public ArrayList<Integer> topoSort(int V, int[][] edges) {
         List<List<int[]>> adjlist = new ArrayList<>();
         ArrayList<Integer> ans = new ArrayList<>();
-        Stack<Integer> result = new Stack<>();
+            Stack<Integer> result = new Stack<>();
         boolean[] visited = new boolean[V];
         Arrays.fill(visited,false);
         for(int i = 0; i < V; i++){

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 class Node {
+    public Node next;
     int data;
     Node left, right;
 

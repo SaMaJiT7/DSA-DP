@@ -19,7 +19,7 @@ public class ATM {
         for(int i = 4; i >= 0; i--){
             long use = Math.min(atm[i],(amount / values[i]));
             result[i] = (int) use;
-            amount -= use * values[i];
+            amount -= (int) (use * values[i]);
         }
 
         if(amount == 0){

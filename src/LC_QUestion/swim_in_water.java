@@ -8,7 +8,6 @@ public class swim_in_water {
     int m;
     public int swimInWater(int[][] grid) {
         n = grid.length;
-        m = grid[0].length;
 
         int l = grid[0][0];
         int r = n*n - 1;
@@ -33,7 +32,7 @@ public class swim_in_water {
     }
 
     boolean possibletoReach(int[][] grid,int i, int j, int t,boolean[][] visited){
-        if(i < 0 || i >= n || j < 0 || j >= n || visited[i][j] == true || grid[i][j] > t){
+        if(i < 0 || i >= n || j < 0 || j >= n || visited[i][j] || grid[i][j] > t){
             return false;
         }
 

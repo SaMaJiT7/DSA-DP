@@ -1,5 +1,6 @@
 package graph;
 
+import java.sql.Array;
 import java.sql.PreparedStatement;
 import java.util.*;
 import java.util.stream.Stream;
@@ -20,7 +21,6 @@ public class courses_II {
              indegree[v]++;
          }
         Queue<Integer> queue = new LinkedList<>();
-        ArrayList<Integer> result = new ArrayList<>();
         for(int i = 0; i < numCourses; i++){
             if(indegree[i] == 0)queue.add(i);
         }
@@ -37,4 +37,5 @@ public class courses_II {
         }
         return i == numCourses ? answer : new int[]{};
     }
+
 }

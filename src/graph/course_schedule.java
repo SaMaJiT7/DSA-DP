@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class course_schedule {
+public class        course_schedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         boolean[] visited = new boolean[numCourses];
         boolean[] inrecursion = new boolean[numCourses];

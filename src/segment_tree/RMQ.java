@@ -11,6 +11,7 @@ public class RMQ {
     public static int RMQ(int st[], int n, int l, int r) {
         return Query(l,r,0,0,n-1,st);
     }
+
     public static void buildSGT(int i, int l, int r, int[] st, int[] arr){
         if(l == r){
             st[i] = arr[l];

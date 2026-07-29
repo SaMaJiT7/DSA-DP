@@ -15,6 +15,7 @@ public class cycle_in_graph {
         for(int[] edge : edges){
             int u = edge[0];
             int v = edge[1];
+
             adjlist.get(u).add(new int[]{v});
 
             adjlist.get(v).add(new int[]{u});

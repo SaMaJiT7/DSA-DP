@@ -1,5 +1,7 @@
 package ALGo_In_Array;
 
+import java.util.Arrays;
+
 public class Duplicate_number {
     public static void main(String[] args) {
         int[] arr = {1,3,4,2,2};
@@ -18,6 +20,7 @@ public class Duplicate_number {
             else {
                 i++;
             }
+
         }
         for (int index = 0;index < arr.length ; index++){
             if(arr[index] != index+1){
